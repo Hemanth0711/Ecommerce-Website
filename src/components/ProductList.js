@@ -25,7 +25,7 @@ const ProductList = ({ addToCart, removeFromCart, addToWishlist, removeFromWishl
   const isInWishlist = (product) => wishlistItems.some(item => item.id === product.id);
 
   return (
-    <div className="flex flex-wrap justify-center bg-gray-100 p-4">
+    <div className="flex flex-wrap justify-center bg-gray-100">
       {filteredProducts.map(product => (
         <div key={product.id} className="border border-gray-300 p-4 m-4 bg-white rounded shadow-lg w-80 text-center">
           <img src={product.image} alt={product.title} className="w-48 h-48 mx-auto" />
