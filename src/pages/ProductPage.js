@@ -16,7 +16,7 @@ const ProductPage = ({ cartItems, wishlistItems, addToCart, removeFromCart, addT
     getProduct();
   }, [id]);
 
-  if (!product) return;
+  if (!product) return <div>Loading...</div>;
 
   const isInCart = cartItems.some(item => item.id === product.id);
   const isInWishlist = wishlistItems.some(item => item.id === product.id);
