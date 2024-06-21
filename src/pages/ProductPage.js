@@ -16,7 +16,7 @@ const ProductPage = ({ cartItems, wishlistItems, addToCart, removeFromCart, addT
     getProduct();
   }, [id]);
 
-  if (!product) return <div>Loading...</div>;
+  if (!product) return;
 
   const isInCart = cartItems.some(item => item.id === product.id);
   const isInWishlist = wishlistItems.some(item => item.id === product.id);
@@ -37,7 +37,7 @@ const ProductPage = ({ cartItems, wishlistItems, addToCart, removeFromCart, addT
         </button>
         <button
           onClick={() => isInWishlist ? removeFromWishlist(product.id) : addToWishlist(product)}
-          className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 flex items-center space-x-2"
+          className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 flex items-center space-x-2"
         >
           {isInWishlist ? <FaHeartBroken /> : <FaHeart />}
           <span>{isInWishlist ? 'Remove from Wishlist' : 'Save to Wishlist'}</span>

@@ -27,7 +27,7 @@ const ProductDetail = ({ addToCart, addToWishlist }) => {
         <button onClick={() => addToCart(product)} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
           Add to Cart
         </button>
-        <button onClick={() => addToWishlist(product)} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+        <button onClick={() => addToWishlist(product)} className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
           Save to Wishlist
         </button>
       </div>

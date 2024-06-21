@@ -20,6 +20,7 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
   };
 
   const handleFilterClick = (category) => {
+    navigate('/');
     handleFilterChange(category);
     setActiveFilter(category);
   };
@@ -70,7 +71,7 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
             className="pl-10 pr-4 py-2 rounded bg-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-yellow-500"
           />
         </div>
-        <Link to="/wishlist" className="bg-yellow-600 text-white px-3 py-2 rounded hover:bg-yellow-600 focus:bg-yellow-700 flex items-center">
+        <Link to="/wishlist" className="bg-yellow-600 text-white px-3 py-2 rounded hover:bg-yellow-700 focus:bg-yellow-700 flex items-center">
           <FaHeart className="mr-2" /> Wishlist
         </Link>
         <Link to="/cart" className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 focus:bg-blue-700 flex items-center">
