@@ -21,7 +21,7 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
 
   return (
     <header className="bg-gradient-to-r from-yellow-300 to-yellow-400 text-gray-900 p-2 md:p-4 flex items-center justify-between">
-      <div className="flex items-center space-x-2 md:space-x-4">
+      <div className="flex items-center space-x-4">
         <img src={Logo} alt="Logo" className="h-8 md:h-10" />
         <div className="hidden md:flex items-center space-x-4">
           <button
@@ -64,15 +64,15 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
             placeholder="Search..."
             value={searchTerm}
             onChange={handleSearchChange}
-            className="pl-6 md:pl-8 pr-3 md:pr-4 py-1 md:py-2 rounded bg-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm md:text-base"
+            className="pl-6 md:pl-8 pr-3 md:pr-4 py-1 md:py-2 rounded bg-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm md:text-base w-40 md:w-64"
           />
         </div>
         <Link to="/wishlist" className="flex items-center group">
-          <FaHeart className="text-yellow-600 mr-0 md:mr-2 group-hover:text-red-600 transition duration-200 text-sm md:text-base" />
+          <FaHeart className="text-yellow-600 mr-0 md:mr-2 group-hover:text-red-600 transition duration-200 text-base md:text-lg" />
           <span className="hidden md:inline text-gray-800 group-hover:text-red-600 transition duration-200">Wishlist</span>
         </Link>
         <Link to="/cart" className="flex items-center group">
-          <FaShoppingCart className="text-blue-500 mr-0 md:mr-2 group-hover:text-blue-700 transition duration-200 text-sm md:text-base" />
+          <FaShoppingCart className="text-blue-500 mr-0 md:mr-2 group-hover:text-blue-700 transition duration-200 text-base md:text-lg" />
           <span className="hidden md:inline text-gray-800 group-hover:text-blue-700 transition duration-200">Cart</span>
         </Link>
         <button
