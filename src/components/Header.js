@@ -1,4 +1,3 @@
-// src/components/Header.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch, FaHeart, FaShoppingCart, FaBars } from 'react-icons/fa';
@@ -13,12 +12,6 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
     setSearchTerm(event.target.value);
   };
 
-  // const clearFilters = () => {
-  //   handleFilterChange('');
-  //   setActiveFilter('');
-  //   navigate('/');
-  // };
-
   const handleFilterClick = (category) => {
     navigate('/');
     handleFilterChange(category);
@@ -27,9 +20,9 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-yellow-300 to-yellow-400 text-gray-900 p-4 flex flex-wrap items-center justify-between">
-      <div className="flex items-center space-x-4">
-        <img src={Logo} alt="Logo" className="h-10" />
+    <header className="bg-gradient-to-r from-yellow-300 to-yellow-400 text-gray-900 p-2 md:p-4 flex items-center justify-between">
+      <div className="flex items-center space-x-2 md:space-x-4">
+        <img src={Logo} alt="Logo" className="h-8 md:h-10" />
         <div className="hidden md:flex items-center space-x-4">
           <button
             onClick={() => handleFilterClick('')}
@@ -62,24 +55,25 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
             Women's Clothing
           </button>
         </div>
-        
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2 md:space-x-4">
         <div className="relative">
-          <FaSearch className="absolute top-3 left-3 text-gray-700" />
+          <FaSearch className="absolute top-2 md:top-3 left-2 md:left-3 text-gray-700 text-sm md:text-base" />
           <input
             type="text"
             placeholder="Search..."
             value={searchTerm}
             onChange={handleSearchChange}
-            className="pl-10 pr-4 py-2 rounded bg-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="pl-6 md:pl-8 pr-3 md:pr-4 py-1 md:py-2 rounded bg-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-yellow-500 text-sm md:text-base"
           />
         </div>
-        <Link to="/wishlist" className="bg-yellow-600 text-white px-3 py-2 rounded hover:bg-yellow-700 focus:bg-yellow-700 flex items-center">
-          <FaHeart className="mr-2" /> Wishlist
+        <Link to="/wishlist" className="flex items-center group">
+          <FaHeart className="text-yellow-600 mr-0 md:mr-2 group-hover:text-red-600 transition duration-200 text-sm md:text-base" />
+          <span className="hidden md:inline text-gray-800 group-hover:text-red-600 transition duration-200">Wishlist</span>
         </Link>
-        <Link to="/cart" className="bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600 focus:bg-blue-700 flex items-center">
-          <FaShoppingCart className="mr-2" /> Cart
+        <Link to="/cart" className="flex items-center group">
+          <FaShoppingCart className="text-blue-500 mr-0 md:mr-2 group-hover:text-blue-700 transition duration-200 text-sm md:text-base" />
+          <span className="hidden md:inline text-gray-800 group-hover:text-blue-700 transition duration-200">Cart</span>
         </Link>
         <button
           className="md:hidden text-gray-900"

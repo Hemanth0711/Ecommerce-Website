@@ -1,4 +1,3 @@
-// src/components/ProductList.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart, FaShoppingCart, FaTrash } from 'react-icons/fa';
@@ -25,14 +24,13 @@ const ProductList = ({ addToCart, removeFromCart, addToWishlist, removeFromWishl
   const isInWishlist = (product) => wishlistItems.some(item => item.id === product.id);
 
   return (
-    <div className="flex flex-wrap justify-center bg-gray-100">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 bg-gray-100">
       {filteredProducts.map(product => (
-        <div key={product.id} className="border border-gray-300 p-4 m-4 bg-white rounded shadow-lg w-80 text-center">
-          <img src={product.image} alt={product.title} className="w-48 h-48 mx-auto" />
+        <div key={product.id} className="border border-gray-300 p-4 bg-white rounded shadow-lg text-center">
+          <img src={product.image} alt={product.title} className="w-full h-48 p-2 object-fit-cover" />
           <h3 className="mt-4 text-lg font-semibold">{product.title}</h3>
           <p className="text-xl font-semibold text-gray-700">${product.price}</p>
           <div className="flex justify-around mt-4">
-            
             <button
               onClick={() => isInWishlist(product) ? removeFromWishlist(product.id) : addToWishlist(product)}
               className={`px-4 py-2 rounded ${isInWishlist(product) ? 'bg-red-500 text-white' : 'bg-yellow-500 text-white'}`}
