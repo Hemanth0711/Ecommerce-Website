@@ -13,11 +13,11 @@ const Header = ({ searchTerm, setSearchTerm, handleFilterChange }) => {
     setSearchTerm(event.target.value);
   };
 
-  const clearFilters = () => {
-    handleFilterChange('');
-    setActiveFilter('');
-    navigate('/');
-  };
+  // const clearFilters = () => {
+  //   handleFilterChange('');
+  //   setActiveFilter('');
+  //   navigate('/');
+  // };
 
   const handleFilterClick = (category) => {
     navigate('/');
