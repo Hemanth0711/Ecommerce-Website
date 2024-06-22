@@ -32,17 +32,18 @@ const ProductList = ({ addToCart, removeFromCart, addToWishlist, removeFromWishl
           <h3 className="mt-4 text-lg font-semibold">{product.title}</h3>
           <p className="text-xl font-semibold text-gray-700">${product.price}</p>
           <div className="flex justify-around mt-4">
-            <button
-              onClick={() => isInCart(product) ? removeFromCart(product.id) : addToCart(product)}
-              className={`px-4 py-2 rounded ${isInCart(product) ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
-            >
-              {isInCart(product) ? <FaTrash /> : <FaShoppingCart />}
-            </button>
+            
             <button
               onClick={() => isInWishlist(product) ? removeFromWishlist(product.id) : addToWishlist(product)}
               className={`px-4 py-2 rounded ${isInWishlist(product) ? 'bg-red-500 text-white' : 'bg-yellow-500 text-white'}`}
             >
               {isInWishlist(product) ? <FaTrash /> : <FaHeart />}
+            </button>
+            <button
+              onClick={() => isInCart(product) ? removeFromCart(product.id) : addToCart(product)}
+              className={`px-4 py-2 rounded ${isInCart(product) ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'}`}
+            >
+              {isInCart(product) ? <FaTrash /> : <FaShoppingCart />}
             </button>
           </div>
           <Link to={`/products/${product.id}`} className="text-blue-500 block mt-4">View Details</Link>
