@@ -27,7 +27,7 @@ const ProductList = ({ addToCart, removeFromCart, addToWishlist, removeFromWishl
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 p-1 md:p-4 bg-gray-100">
       {filteredProducts.map(product => (
         <div key={product.id} className="border border-gray-300 p-2 md:p-4 bg-white rounded shadow-lg text-center">
-          <img src={product.image} alt={product.title} className="w-full h-32 md:h-48 p-2 object-cover" />
+          <img src={product.image} alt={product.title} className="w-full h-32 md:h-48 p-2 object-fit-cover" />
           <h3 className="mt-2 md:mt-4 text-sm md:text-lg font-semibold">{product.title}</h3>
           <p className="text-lg md:text-xl font-semibold text-gray-700">${product.price}</p>
           <div className="flex justify-around mt-2 md:mt-4">
